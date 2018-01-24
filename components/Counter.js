@@ -22,7 +22,7 @@ var element = React.createElement(Counter);
 ReactDOM.render(element, document.getElementById('app'));*/
 var Counter = React.createClass({
 	getDefaultProps: function() {
-		console.log('idea');
+		console.log('Ustawienie domyślnych wartości propsów.');
 	},
 	getInitialState: function() {
 		return {
@@ -30,26 +30,26 @@ var Counter = React.createClass({
 		};
 	},
 	componentWillMount: function() {
-		console.log('idea');
+		console.log('Komponent zostanie zamontowany.');
 	},
 	componentDidMount: function() {
-		console.log('idea');
+		console.log('Komponent został zamontoany.');
 	},
 	componentWillReceiveProps: function() {
-		console.log('idea');
+		console.log('Komponent otrzyma nowe łaściwości.');
 	},
 	shouldComponentUpdate: function() {
-		console.log('idea');
+		console.log('Sprawdza czy komponent wymaga aktualizacji.');
 		return true;
 	},
 	componentWillUpdate: function() {
-		console.log('idea');
+		console.log('Komponent zostanie zaktualizowany.');
 	},
 	componentDidUpdate: function() {
-		console.log('idea');
+		console.log('Komponent został zaktualizowany.');
 	},
 	componentWillUnmount: function() {
-		console.log('idea');
+		console.log('Komponent zostanie odmontowany.');
 	},
 	increment: function() {
 		this.setState({
@@ -73,22 +73,10 @@ var Counter = React.createClass({
 	},
 	render: function() {
 		return React.createElement('div', {},
-			React.createElement('button', {
-					onClick: this.increment
-				},
-				React.createElement('span', {}, 'Dodaj')),
-			React.createElement('button', {
-					onClick: this.decrement
-				},
-				React.createElement('span', {}, 'Odejmij')),
-			React.createElement('button', {
-					onClick: this.multiply
-				},
-				React.createElement('span', {}, 'Mnóż x 2')),
-			React.createElement('button', {
-					onClick: this.reset
-				},
-				React.createElement('span', {}, 'reset')),
+			React.createElement('button', {onClick: this.increment}, 'Dodaj'),
+			React.createElement('button', {onClick: this.decrement}, 'Odejmij'),
+			React.createElement('button', {onClick: this.multiply}, 'Mnóż x 2'),
+			React.createElement('button', {onClick: this.reset}, 'reset'),
 			React.createElement('p', {}, 'Licznik: ' + this.state.counter)
 		);
 	},
